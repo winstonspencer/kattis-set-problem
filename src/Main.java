@@ -16,22 +16,24 @@ public class Main {
 
         // Generate the union of set A and set B then sort the result lexicographically.
         Set<String> union = lexicographicalSort(union(setA, setB));
-        printSet(union);
+        printSet(union, true);
 
         // Generate the intersection of set A and set B then sort the result lexicographically.
         Set<String> intersection = lexicographicalSort(intersection(setA, setB));
-        printSet(intersection);
+        printSet(intersection, true);
 
         // Generate the cartesian product of set A x set B then sort the result lexicographically.
         Set<String> cartesianProduct = lexicographicalSort(cartesianProduct(setA, setB));
-        printSet(cartesianProduct);
+        printSet(cartesianProduct, true);
     }
 
-    private static void printSet(Set<String> set) {
+    private static void printSet(Set<String> set, boolean newLine) {
         for (String element : set) {
             System.out.println(element);
         }
-        System.out.println("");
+        if(newLine){
+            System.out.println("");
+        }
     }
 
     private static Set<String> lexicographicalSort(Set<String> input) {
@@ -56,7 +58,7 @@ public class Main {
         Set<String> cartesianProduct = new HashSet<>();
         for (String a : setA) {
             for (String b : setB) {
-                cartesianProduct.add(a + ", " + b);
+                cartesianProduct.add(a + " " + b);
             }
         }
         return cartesianProduct;
