@@ -64,6 +64,7 @@ public class Main {
 
     private static void readInputs(Set<String> setA, Set<String> setB) {
 
+        String input = null;
         Scanner scanner = null;
         try {
             scanner = new Scanner(System.in);
@@ -72,12 +73,16 @@ public class Main {
 
             int size = scanner.nextInt();
             for (int i = 0; i < size; i++) {
-                setA.add(scanner.next());
+                input = scanner.next();
+                if(input.length() > 10) input = input.substring(0, 10);
+                setA.add(input);
             }
 
             size = scanner.nextInt();
             for (int i = 0; i < size; i++) {
-                setB.add(scanner.next());
+                input = scanner.next();
+                if(input.length() > 10) input = input.substring(0, 10);
+                setB.add(input);
             }
 
             System.out.println("");
